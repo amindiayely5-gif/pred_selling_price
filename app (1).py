@@ -17,7 +17,7 @@ def load_assets():
     return encoders, xgb_model, uniques, scaler
 
 try:
-    encoders, xgb_model, uniques = load_assets()
+    encoders, xgb_model, uniques, scaler= load_assets()
 except Exception as e:
     st.error(f"Erreur lors du chargement des modèles : {e}. Assurez-vous que 'xgb_model.joblib', 'encoders.joblib' , 'scalers.joblib'et 'uniques.joblib' sont dans le même dossier.")
     st.stop()
