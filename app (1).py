@@ -3,7 +3,11 @@ import joblib as jb
 import pandas as pd
 import numpy as np
 
-st.set_page_colab = False
+st.set_page_config(
+    page_title="Prédiction du prix d'une voiture",
+    page_icon="🚗",
+    layout="centered"
+)
 st.title("🚗 Prédiction du Prix de Vente d'un Véhicule")
 st.write("Cette application utilise un modèle XGBoost pour prédire le prix de vente d'une voiture.")
 
@@ -17,7 +21,7 @@ def load_assets():
     return encoders, xgb_model, uniques, scaler
 
 try:
-    encoders, xgb_model, uniques, scaler= load_assets()
+    encoders, xgb_model, uniques, scaler = load_assets()
 except Exception as e:
     st.error(f"Erreur lors du chargement des modèles : {e}. Assurez-vous que 'xgb_model.joblib', 'encoders.joblib' , 'scalers.joblib'et 'uniques.joblib' sont dans le même dossier.")
     st.stop()
