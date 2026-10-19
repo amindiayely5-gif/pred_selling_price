@@ -13,7 +13,8 @@ def load_assets():
     encoders = jb.load('encoders.joblib')
     xgb_model = jb.load('xgb_model.joblib')
     uniques = jb.load('uniques.joblib')
-    return encoders, xgb_model, uniques
+    scaler = jb.load('scaler.joblib')
+    return encoders, xgb_model, uniques, scaler
 
 try:
     encoders, xgb_model, uniques = load_assets()
